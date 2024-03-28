@@ -1,3 +1,4 @@
+
 #!/bin/bash
 export LC_COLLATE=C
 shopt -s extglob
@@ -30,7 +31,7 @@ while true; do
 	 do
 	 
 		read -p "Enter the name of column $i:" column_name
-		if [ -n "$column_name" ] && [[ $column_name =~ $valid_pattern ]]
+		if [ -n "$column_name" ] && [[ $column_name =~ $valid_pattern ]] && [[ ! "${columns[*]}" =~ "$column_name" ]]
 		then
 		break;
 		else 
@@ -91,3 +92,4 @@ echo "Invalid Table name"
 fi
 	
 done           
+
